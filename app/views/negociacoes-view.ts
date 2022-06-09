@@ -22,12 +22,12 @@ export class NegociacoesView {
           ${model.lista().map((item) => {
             return `
             <tr>
-              <td>${item.data}</td>
+              <td>${new Intl.DateTimeFormat().format(item.data)}</td>
               <td>${item.quantidade}</td>
               <td>${item.valor}</td>
             </tr>
             `
-          })}
+          }).join('')}
         </tbody>
       </table>
     `;
